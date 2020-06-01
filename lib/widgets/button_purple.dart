@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 
 class ButtonPurple extends StatelessWidget {
 
-  String buttonText = "Navigate";
-
-  ButtonPurple(this.buttonText);
+  final String buttonText;
+  final VoidCallback onPressed;
+  ButtonPurple({
+      @required this.buttonText,
+      @required this.onPressed 
+    });
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return InkWell(
       onTap: () {
-        Scaffold.of(context).showSnackBar(
-            SnackBar(
-              content: Text("Navegando"),
-            )
-        );
+        onPressed();
       },
       child: Container(
         margin: EdgeInsets.only(
