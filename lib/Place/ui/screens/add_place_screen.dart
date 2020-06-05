@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips_app/Place/model/place.dart';
@@ -62,8 +64,8 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: CardImage(
-                      //pathImage: widget.image.path,
-                      pathImage: "assets/img/beach_palm.jpeg",
+                      pathImage: widget.image.path,
+                      //pathImage: "assets/img/beach_palm.jpeg",
                       iconData: Icons.camera_alt,
                       onPressedFabIcon: null,
                       height: 250,
@@ -96,15 +98,44 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       buttonText: "Add Place",
                       onPressed: () {
                         //FireBase Storage
+                        //Id usuario logeado
+                        //Subir archivo
+                        userBloc.currentUser.then((FirebaseUser user){
+                          if(user!=null){
+                            String uid = user.uid;
+                            String path = "${uid}/${DateTime.now().toString()}.jpg";
+                            userBloc.uploadFile(path, widget.image).then(
+                              (StorageUploadTask storageUploadTask){
+                                storageUploadTask.onComplete.then((StorageTaskSnapshot snapshot){
+                                  snapshot.ref.getDownloadURL().then(
+                                    (urlImage){
+                                      print("urlImage *****************************");
 
-                        userBloc.updatePlaceData(Place(
-                            name: _controllerTittlePlace.text,
-                            description: _controllerDescriptionPlace.text,
-                            likes: 0,
-                        )).whenComplete(
-                          (){
-                            Navigator.pop(context);
-                          });
+                                      print("urlImage: ${urlImage}");
+
+                                      //Guardar informacion
+                                        userBloc.updatePlaceData(Place(
+                                        name: _controllerTittlePlace.text,
+                                        description: _controllerDescriptionPlace.text,
+                                        urlImage: urlImage,
+                                        likes: 0,
+                                        )).whenComplete(
+                                        (){
+                                          Navigator.pop(context);
+                                        });
+
+
+
+                                    });
+                                });
+                              }
+                            );
+                          
+
+                          }
+                        });
+
+                      
                       }),
                 )
               ],

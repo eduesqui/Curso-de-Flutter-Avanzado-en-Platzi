@@ -4,7 +4,7 @@
             "outputFile": "E:\\Personal\\flutterWork\\Curso-de-Flutter-Avanzado-en-Platzi\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Anzen Digital\\.gradle\\caches\\transforms-1\\files-1.1\\media-1.0.0-rc01.aar\\293866042967e3352fc29b142835cd08\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Anzen Digital\\.gradle\\caches\\transforms-1\\files-1.1\\media-1.0.0.aar\\05e80734c1cd14438a5ba886c87663db\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Anzen Digital\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0-rc01.aar\\82fa0f44dff62068c54f2121dbff9288\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Anzen Digital\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.2.aar\\63a3edfdb1d7f9107bd4b2abeec8e429\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
