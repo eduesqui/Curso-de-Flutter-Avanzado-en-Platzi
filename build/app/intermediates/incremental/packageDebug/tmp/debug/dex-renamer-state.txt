@@ -1,4 +1,4 @@
-#Thu Jun 04 19:27:54 CDT 2020
+#Sat Jun 06 20:26:24 CDT 2020
 base.10=E\:\\Personal\\flutterWork\\Curso-de-Flutter-Avanzado-en-Platzi\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\10
 base.9=E\:\\Personal\\flutterWork\\Curso-de-Flutter-Avanzado-en-Platzi\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\24
 base.8=E\:\\Personal\\flutterWork\\Curso-de-Flutter-Avanzado-en-Platzi\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\8

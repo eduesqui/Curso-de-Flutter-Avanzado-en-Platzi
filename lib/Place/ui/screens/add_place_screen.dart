@@ -22,11 +22,13 @@ class AddPlaceScreen extends StatefulWidget {
 }
 
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
+ final _controllerTittlePlace = TextEditingController();
+ final _controllerDescriptionPlace = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     UserBloc userBloc = BlocProvider.of<UserBloc>(context);
-    final _controllerTittlePlace = TextEditingController();
-    final _controllerDescriptionPlace = TextEditingController();
+   
     double screenWidght = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -69,7 +71,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       iconData: Icons.camera_alt,
                       onPressedFabIcon: null,
                       height: 250,
-                      wigth: 300,
+                      widght: 300,
                       left: 0),
                 ),
                 Container(

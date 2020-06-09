@@ -46,7 +46,7 @@ class ProfilePlaceInfo extends StatelessWidget {
     );
 
     final steps = Text(
-      'Steps ${this.place.likes}',
+      'Favs ${this.place.likes}',
       style: TextStyle(
           fontFamily: 'Lato',
           fontSize: 14.0,

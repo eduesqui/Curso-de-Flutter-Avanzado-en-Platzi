@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/widgets/floating_action_button_green.dart';
 
@@ -5,7 +7,7 @@ import 'package:platzi_trips_app/widgets/floating_action_button_green.dart';
 class  CardImage extends StatelessWidget {
 
   final double height;
-  final double wigth;
+  final double widght;
   final double left;
   VoidCallback onPressedFabIcon;
   final IconData iconData;
@@ -17,7 +19,7 @@ class  CardImage extends StatelessWidget {
      @required this.iconData,
      @required this.onPressedFabIcon,
      this.height = 200,
-     this.wigth = 250,
+     this.widght = 250,
      this.left = 20
     } );
 
@@ -29,7 +31,7 @@ class  CardImage extends StatelessWidget {
 
     final card = Container(
       height: height,
-      width: wigth,
+      width: widght,
       margin: EdgeInsets.only(
         left: left
 
@@ -38,7 +40,7 @@ class  CardImage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-            image: AssetImage(pathImage)
+            image:  NetworkImage(pathImage)
         ),
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         shape: BoxShape.rectangle,
